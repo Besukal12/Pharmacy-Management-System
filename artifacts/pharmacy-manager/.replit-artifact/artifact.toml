@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Pharmacy Management System"
+description = "A browser-based pharmacy operations system for managing medicines, stock, sales, customers, purchases, suppliers, staff, and reports. Demo data and all changes persist locally in the browser; no backend or external services are used."
+version = "1.0.0"
+id = "artifacts/pharmacy-manager"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18289
+
+[services.development]
+run = "pnpm --filter @workspace/pharmacy-manager run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/pharmacy-manager", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/pharmacy-manager/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18289"
+BASE_PATH = "/"

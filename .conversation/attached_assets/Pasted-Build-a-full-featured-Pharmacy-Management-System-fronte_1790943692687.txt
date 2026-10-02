@@ -1,0 +1,223 @@
+Build a **full-featured Pharmacy Management System frontend** that looks and behaves like a real production software product.
+
+This is a **frontend-only application** for now.
+
+There must be **NO backend, NO API, NO external database, NO authentication service, and NO Supabase/Firebase**.
+
+All application data must be stored locally in the browser/frontend using **localStorage or IndexedDB** so that the application remains functional after refreshing the page.
+
+The goal is to create a realistic, polished pharmacy management system that I can later connect to a real Node.js/Express/PostgreSQL backend.
+
+---
+
+# 1. Product Goal
+
+The application is designed for a pharmacy to manage:
+
+* Products/medicines
+* Inventory
+* Sales
+* Customers
+* Suppliers
+* Purchases
+* Expiry dates
+* Low-stock products
+* Stock movements
+* Sales history
+* Purchase history
+* Revenue
+* Expenses
+* Reports
+* Users/staff
+* Pharmacy settings
+
+The system should help a pharmacy employee answer:
+
+> What do we have in stock?
+
+> What is selling?
+
+> What is running low?
+
+> What is expiring soon?
+
+> How much did we sell today?
+
+> What did we purchase?
+
+> Which products are profitable?
+
+> Which suppliers do we use?
+
+> What happened to our inventory?
+
+---
+
+# 2. Important Implementation Rule
+
+Do NOT build this as a collection of static screens.
+
+The application must be **interactive and stateful**.
+
+For example:
+
+* Adding a product must actually add it to the product list.
+* Editing a product must update the existing product.
+* Deleting a product must remove it.
+* Creating a sale must decrease inventory.
+* Cancelling/reversing a sale must restore inventory.
+* Recording a purchase must increase inventory.
+* Low-stock indicators must update automatically.
+* Expired/near-expiry indicators must update based on dates.
+* Dashboard statistics must be calculated from the actual stored data.
+* Search and filters must work.
+* Reports must reflect actual frontend data.
+* Refreshing the browser must preserve the data.
+
+Use realistic mock seed data on first launch so the dashboard does not look empty.
+
+---
+
+# 3. Main Navigation
+
+Create a professional sidebar navigation with:
+
+### Dashboard
+
+### Sales / POS
+
+### Products
+
+### Inventory
+
+### Purchases
+
+### Customers
+
+### Suppliers
+
+### Reports
+
+### Staff / Users
+
+### Settings
+
+The sidebar should:
+
+* Collapse on desktop
+* Become a mobile drawer on smaller screens
+* Clearly show the active page
+* Have icons
+* Have tooltips when collapsed
+
+---
+
+# 4. Dashboard
+
+Create a useful pharmacy dashboard rather than a generic admin dashboard.
+
+Show cards for:
+
+* Today's sales
+* Today's number of transactions
+* Total products
+* Low-stock products
+* Expiring soon
+* Out-of-stock products
+* Total inventory value
+* Monthly revenue
+
+Include useful visualizations:
+
+### Sales Overview
+
+Line/bar chart showing sales over:
+
+* Today
+* Last 7 days
+* Last 30 days
+
+### Top Selling Products
+
+Show:
+
+* Product
+* Units sold
+* Revenue
+
+### Low Stock
+
+Show products below their minimum stock threshold.
+
+### Expiring Soon
+
+Show medicines that will expire soon.
+
+### Recent Transactions
+
+Show:
+
+* Invoice number
+* Customer
+* Date
+* Amount
+* Payment method
+* Status
+
+The dashboard must calculate these values from the application's stored data.
+
+---
+
+# 5. Products Management
+
+Create a complete product management interface.
+
+Each product should support fields such as:
+
+* Product ID / SKU
+* Product name
+* Generic name
+* Brand
+* Category
+* Dosage form
+* Strength
+* Unit
+* Barcode
+* Batch number
+* Supplier
+* Purchase price
+* Selling price
+* Quantity
+* Minimum stock level
+* Maximum stock level
+* Manufacturing date
+* Expiry date
+* Prescription required
+* Product status
+* Description
+
+Example categories:
+
+* Antibiotics
+* Pain Relief
+* Vitamins
+* Cold & Flu
+* Diabetes
+* Cardiovascular
+* Dermatology
+* First Aid
+* Personal Care
+* Other
+
+Features:
+
+* Add product
+* Edit product
+* View product details
+* Delete product
+* Search
+* Filter
+* Sort
+* Pagination
+* Category filter
+* Stock status
